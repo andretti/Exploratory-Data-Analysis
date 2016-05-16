@@ -12,13 +12,13 @@ full_data <- read.table("./data/household_power_consumption.txt", sep = ";", hea
 data <- full_data[full_data$Date %in% c("1/2/2007","2/2/2007") ,]
 
 # Convert data to numeric and date/time types
-datetime <- strptime(paste(subSetData$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
-globalActivePower <- as.numeric(subSetData$Global_active_power)
-globalReactivePower <- as.numeric(subSetData$Global_reactive_power)
-voltage <- as.numeric(subSetData$Voltage)
-subMetering1 <- as.numeric(subSetData$Sub_metering_1)
-subMetering2 <- as.numeric(subSetData$Sub_metering_2)
-subMetering3 <- as.numeric(subSetData$Sub_metering_3)
+datetime <- strptime(paste(data$Date, data$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
+globalActivePower <- as.numeric(data$Global_active_power)
+globalReactivePower <- as.numeric(data$Global_reactive_power)
+voltage <- as.numeric(data$Voltage)
+subMetering1 <- as.numeric(data$Sub_metering_1)
+subMetering2 <- as.numeric(data$Sub_metering_2)
+subMetering3 <- as.numeric(data$Sub_metering_3)
 
 
 png("plot4.png", width=480, height=480)
